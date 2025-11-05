@@ -1,68 +1,253 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import "tailwindcss";
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+/* LIGHT MODE - Default theme */
+@theme {
+  /* Button and badge styles */
+  --button-outline: rgba(0, 0, 0, 0.10);
+  --badge-outline: rgba(0, 0, 0, 0.05);
+  --opaque-button-border-intensity: -8;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* Elevation backgrounds */
+  --elevate-1: rgba(0, 0, 0, 0.03);
+  --elevate-2: rgba(0, 0, 0, 0.08);
+
+  /* Color palette */
+  --color-background: oklch(97% 0.004 40);
+  --color-foreground: oklch(15% 0.01 30);
+  --color-border: oklch(85% 0.015 40);
+  
+  --color-card: oklch(100% 0 0);
+  --color-card-foreground: oklch(15% 0.01 30);
+  --color-card-border: oklch(88% 0.012 40);
+  
+  --color-sidebar: oklch(96% 0 0);
+  --color-sidebar-foreground: oklch(10% 0 0);
+  --color-sidebar-border: oklch(90% 0 0);
+  --color-sidebar-primary: oklch(28% 0.065 210);
+  --color-sidebar-primary-foreground: oklch(98% 0.015 210);
+  --color-sidebar-accent: oklch(90% 0.002 0);
+  --color-sidebar-accent-foreground: oklch(10% 0 0);
+  --color-sidebar-ring: oklch(28% 0.065 210);
+  
+  --color-popover: oklch(94% 0 0);
+  --color-popover-foreground: oklch(10% 0 0);
+  --color-popover-border: oklch(88% 0 0);
+  
+  --color-primary: oklch(25% 0.045 38);
+  --color-primary-foreground: oklch(98% 0.025 40);
+  --color-secondary: oklch(90% 0.018 40);
+  --color-secondary-foreground: oklch(15% 0.01 30);
+  
+  --color-muted: oklch(93% 0.015 40);
+  --color-muted-foreground: oklch(45% 0.008 30);
+  
+  --color-accent: oklch(88% 0.06 38);
+  --color-accent-foreground: oklch(15% 0.01 30);
+  
+  --color-destructive: oklch(32% 0.072 0);
+  --color-destructive-foreground: oklch(98% 0.015 0);
+  
+  --color-input: oklch(75% 0 0);
+  --color-ring: oklch(28% 0.065 210);
+  
+  --color-chart-1: oklch(28% 0.065 210);
+  --color-chart-2: oklch(35% 0.075 25);
+  --color-chart-3: oklch(32% 0.07 340);
+  --color-chart-4: oklch(30% 0.055 150);
+  --color-chart-5: oklch(32% 0.06 270);
+
+  /* Typography */
+  --font-sans: Montserrat, system-ui, -apple-system, sans-serif;
+  --font-serif: Cormorant Garamond, Georgia, serif;
+  --font-display: Cinzel, Georgia, serif;
+  --font-mono: Menlo, monospace;
+  
+  /* Border radius */
+  --radius: 0.5rem;
+  
+  /* Shadows */
+  --shadow-2xs: 0px 1px 2px 0px hsl(0 0% 0% / 0.05);
+  --shadow-xs: 0px 1px 3px 0px hsl(0 0% 0% / 0.08);
+  --shadow-sm: 0px 2px 4px -1px hsl(0 0% 0% / 0.06), 0px 1px 2px -1px hsl(0 0% 0% / 0.04);
+  --shadow: 0px 4px 6px -1px hsl(0 0% 0% / 0.08), 0px 2px 4px -2px hsl(0 0% 0% / 0.05);
+  --shadow-md: 0px 6px 12px -2px hsl(0 0% 0% / 0.10), 0px 3px 6px -3px hsl(0 0% 0% / 0.07);
+  --shadow-lg: 0px 10px 20px -4px hsl(0 0% 0% / 0.12), 0px 4px 8px -4px hsl(0 0% 0% / 0.08);
+  --shadow-xl: 0px 20px 30px -6px hsl(0 0% 0% / 0.15), 0px 8px 12px -6px hsl(0 0% 0% / 0.10);
+  --shadow-2xl: 0px 30px 50px -12px hsl(0 0% 0% / 0.20);
+  
+  /* Spacing and tracking */
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+
+  /* Computed borders */
+  --sidebar-primary-border: color-mix(in oklch, var(--color-sidebar-primary), black calc(var(--opaque-button-border-intensity) * 1%));
+  --sidebar-accent-border: color-mix(in oklch, var(--color-sidebar-accent), black calc(var(--opaque-button-border-intensity) * 1%));
+  --primary-border: color-mix(in oklch, var(--color-primary), black calc(var(--opaque-button-border-intensity) * 1%));
+  --secondary-border: color-mix(in oklch, var(--color-secondary), black calc(var(--opaque-button-border-intensity) * 1%));
+  --muted-border: color-mix(in oklch, var(--color-muted), black calc(var(--opaque-button-border-intensity) * 1%));
+  --accent-border: color-mix(in oklch, var(--color-accent), black calc(var(--opaque-button-border-intensity) * 1%));
+  --destructive-border: color-mix(in oklch, var(--color-destructive), black calc(var(--opaque-button-border-intensity) * 1%));
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+/* DARK MODE - Class-based (.dark) */
+.dark {
+  /* Button and badge styles */
+  --button-outline: rgba(255, 255, 255, 0.10);
+  --badge-outline: rgba(255, 255, 255, 0.05);
+  --opaque-button-border-intensity: 9;
+
+  /* Elevation backgrounds */
+  --elevate-1: rgba(255, 255, 255, 0.04);
+  --elevate-2: rgba(255, 255, 255, 0.09);
+
+  /* Color palette */
+  --color-background: oklch(12% 0.008 30);
+  --color-foreground: oklch(92% 0.015 40);
+  --color-border: oklch(22% 0.008 30);
+  
+  --color-card: oklch(15% 0.01 30);
+  --color-card-foreground: oklch(92% 0.015 40);
+  --color-card-border: oklch(20% 0.008 30);
+  
+  --color-sidebar: oklch(13% 0 0);
+  --color-sidebar-foreground: oklch(95% 0 0);
+  --color-sidebar-border: oklch(19% 0 0);
+  --color-sidebar-primary: oklch(30% 0.06 210);
+  --color-sidebar-primary-foreground: oklch(98% 0.015 210);
+  --color-sidebar-accent: oklch(18% 0.003 0);
+  --color-sidebar-accent-foreground: oklch(95% 0 0);
+  --color-sidebar-ring: oklch(30% 0.06 210);
+  
+  --color-popover: oklch(15% 0 0);
+  --color-popover-foreground: oklch(95% 0 0);
+  --color-popover-border: oklch(21% 0 0);
+  
+  --color-primary: oklch(35% 0.055 38);
+  --color-primary-foreground: oklch(98% 0.025 40);
+  --color-secondary: oklch(22% 0.008 30);
+  --color-secondary-foreground: oklch(92% 0.015 40);
+  
+  --color-muted: oklch(20% 0.008 30);
+  --color-muted-foreground: oklch(60% 0.01 40);
+  
+  --color-accent: oklch(25% 0.045 38);
+  --color-accent-foreground: oklch(95% 0.02 40);
+  
+  --color-destructive: oklch(32% 0.068 0);
+  --color-destructive-foreground: oklch(98% 0.015 0);
+  
+  --color-input: oklch(35% 0 0);
+  --color-ring: oklch(30% 0.06 210);
+  
+  --color-chart-1: oklch(68% 0.075 210);
+  --color-chart-2: oklch(70% 0.09 25);
+  --color-chart-3: oklch(68% 0.08 340);
+  --color-chart-4: oklch(65% 0.07 150);
+  --color-chart-5: oklch(70% 0.075 270);
+
+  /* Shadows */
+  --shadow-2xs: 0px 1px 2px 0px hsl(0 0% 0% / 0.40);
+  --shadow-xs: 0px 1px 3px 0px hsl(0 0% 0% / 0.50);
+  --shadow-sm: 0px 2px 4px -1px hsl(0 0% 0% / 0.45), 0px 1px 2px -1px hsl(0 0% 0% / 0.35);
+  --shadow: 0px 4px 6px -1px hsl(0 0% 0% / 0.50), 0px 2px 4px -2px hsl(0 0% 0% / 0.40);
+  --shadow-md: 0px 6px 12px -2px hsl(0 0% 0% / 0.55), 0px 3px 6px -3px hsl(0 0% 0% / 0.45);
+  --shadow-lg: 0px 10px 20px -4px hsl(0 0% 0% / 0.60), 0px 4px 8px -4px hsl(0 0% 0% / 0.50);
+  --shadow-xl: 0px 20px 30px -6px hsl(0 0% 0% / 0.65), 0px 8px 12px -6px hsl(0 0% 0% / 0.55);
+  --shadow-2xl: 0px 30px 50px -12px hsl(0 0% 0% / 0.70);
+
+  /* Computed borders */
+  --sidebar-primary-border: color-mix(in oklch, var(--color-sidebar-primary), white calc(var(--opaque-button-border-intensity) * 1%));
+  --sidebar-accent-border: color-mix(in oklch, var(--color-sidebar-accent), white calc(var(--opaque-button-border-intensity) * 1%));
+  --primary-border: color-mix(in oklch, var(--color-primary), white calc(var(--opaque-button-border-intensity) * 1%));
+  --secondary-border: color-mix(in oklch, var(--color-secondary), white calc(var(--opaque-button-border-intensity) * 1%));
+  --muted-border: color-mix(in oklch, var(--color-muted), white calc(var(--opaque-button-border-intensity) * 1%));
+  --accent-border: color-mix(in oklch, var(--color-accent), white calc(var(--opaque-button-border-intensity) * 1%));
+  --destructive-border: color-mix(in oklch, var(--color-destructive), white calc(var(--opaque-button-border-intensity) * 1%));
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+/* Base styles */
+@layer base {
+  * {
+    border-color: var(--color-border);
   }
-  a:hover {
-    color: #747bff;
+
+  body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
   }
-  button {
-    background-color: #f9f9f9;
+}
+
+/* Utility layer */
+@layer utilities {
+  input[type="search"]::-webkit-search-cancel-button {
+    display: none;
+  }
+
+  [contenteditable][data-placeholder]:empty::before {
+    content: attr(data-placeholder);
+    color: var(--color-muted-foreground);
+    pointer-events: none;
+  }
+
+  .no-default-hover-elevate {}
+  .no-default-active-elevate {}
+
+  .toggle-elevate::before,
+  .toggle-elevate-2::before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    z-index: -1;
+  }
+
+  .toggle-elevate.toggle-elevated::before {
+    background-color: var(--elevate-2);
+  }
+
+  .border.toggle-elevate::before {
+    inset: -1px;
+  }
+
+  .hover-elevate:not(.no-default-hover-elevate),
+  .active-elevate:not(.no-default-active-elevate),
+  .hover-elevate-2:not(.no-default-hover-elevate),
+  .active-elevate-2:not(.no-default-active-elevate) {
+    position: relative;
+    z-index: 0;
+  }
+
+  .hover-elevate:not(.no-default-hover-elevate)::after,
+  .active-elevate:not(.no-default-active-elevate)::after,
+  .hover-elevate-2:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:not(.no-default-active-elevate)::after {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    z-index: 999;
+  }
+
+  .hover-elevate:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-1);
+  }
+
+  .hover-elevate-2:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-2);
+  }
+
+  .border.hover-elevate:not(.no-hover-interaction-elevate)::after,
+  .border.active-elevate:not(.no-active-interaction-elevate)::after,
+  .border.hover-elevate-2:not(.no-hover-interaction-elevate)::after,
+  .border.active-elevate-2:not(.no-active-interaction-elevate)::after,
+  .border.hover-elevate:not(.no-hover-interaction-elevate)::after {
+    inset: -1px;
   }
 }
