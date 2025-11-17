@@ -1,23 +1,3 @@
-
-import artwork1 from "@assets/generated_images/Abstract_expressionist_blue_gold_97eed4f5.png";
-import artwork2 from "@assets/generated_images/Misty_mountain_watercolor_landscape_98e3484f.png";
-import artwork3 from "@assets/generated_images/Minimalist_monochrome_portrait_b509c36b.png";
-import artwork4 from "@assets/generated_images/Tropical_botanical_painting_932a11ef.png";
-import artwork5 from "@assets/generated_images/Dramatic_ocean_seascape_72e318d5.png";
-import artwork6 from "@assets/generated_images/Geometric_abstract_earth_tones_7553f335.png";
-import artwork7 from "@assets/generated_images/Twilight_cityscape_impressionist_b4389011.png";
-import artwork8 from "@assets/generated_images/Soft_peony_still_life_2d129db7.png";
-import artwork9 from "@assets/generated_images/Black_gold_gestural_abstract_96bee729.png";
-import artwork10 from "@assets/generated_images/Luminous_forest_landscape_99327954.png";
-import artwork11 from "@assets/generated_images/Dancer_in_motion_painting_573d6d9c.png";
-import artwork12 from "@assets/generated_images/Horizontal_color_field_abstract_5870cfb0.png";
-import artwork13 from "@assets/generated_images/Classical_architecture_painting_cb9ad8c3.png";
-import artwork14 from "@assets/generated_images/Coastal_sunset_landscape_616583f2.png";
-import artwork15 from "@assets/generated_images/Navy_copper_textured_abstract_bb089602.png";
-import artwork16 from "@assets/generated_images/Vintage_ceramic_still_life_41ae8e5e.png";
-import artwork17 from "@assets/generated_images/Vibrant_color_splash_abstract_3e604eab.png";
-import artwork18 from "@assets/generated_images/Zen_garden_minimalist_painting_f1bfd06b.png";
-
 export const artworksData = [
   {
     id: "1",
@@ -26,7 +6,7 @@ export const artworksData = [
     medium: "Oil on Canvas",
     dimensions: '36" × 48"',
     description: "An exploration of emotion through bold brushstrokes and vibrant color interplay. This piece captures the tension between chaos and harmony.",
-    imageUrl: artwork1,
+    imageUrl: "https://res.cloudinary.com/dq6x48o03/image/upload/v1763031149/IMG_0061_alrqy1.webp",
     category: "Abstract",
     price: "$3,200",
     sold: "false",
@@ -38,7 +18,7 @@ export const artworksData = [
     medium: "Watercolor",
     dimensions: '24" × 18"',
     description: "Inspired by early morning hikes in the Cascades, this watercolor celebrates the ethereal beauty of dawn breaking over misty peaks.",
-    imageUrl: artwork2,
+    imageUrl: "https://res.cloudinary.com/dq6x48o03/image/upload/a_-90/v1763031082/IMG_0086_h8xzwm.webp",
     category: "Landscape",
     price: "$1,800",
     sold: "false",
@@ -50,7 +30,7 @@ export const artworksData = [
     medium: "Acrylic on Canvas",
     dimensions: '30" × 40"',
     description: "A study in minimalism and form. The stark monochrome palette invites viewers to find beauty in simplicity.",
-    imageUrl: artwork3,
+    imageUrl: "https://res.cloudinary.com/dq6x48o03/image/upload/a_-90/v1763031142/IMG_0064_ylapdf.webp",
     category: "Portrait",
     price: "$2,400",
     sold: "true",
@@ -62,7 +42,7 @@ export const artworksData = [
     medium: "Oil on Canvas",
     dimensions: '28" × 36"',
     description: "Lush botanical forms rendered with meticulous detail. This work celebrates the vitality and diversity of tropical ecosystems.",
-    imageUrl: artwork4,
+    imageUrl: "https://res.cloudinary.com/dq6x48o03/image/upload/v1763031139/IMG_0079_dtgcp5.webp",
     category: "Botanical",
     price: "$2,600",
     sold: "false",
@@ -74,7 +54,7 @@ export const artworksData = [
     medium: "Oil on Canvas",
     dimensions: '40" × 30"',
     description: "The raw power of nature captured in dramatic brushwork. Waves crash against an unseen shore under turbulent skies.",
-    imageUrl: artwork5,
+    imageUrl: "https://res.cloudinary.com/dq6x48o03/image/upload/a_-90/v1763031083/IMG_0080_okx9gt.webp",
     category: "Landscape",
     price: "$3,500",
     sold: "false",
@@ -86,7 +66,7 @@ export const artworksData = [
     medium: "Mixed Media",
     dimensions: '24" × 24"',
     description: "Geometric abstraction inspired by natural forms and archaeological remnants. A meditation on time and texture.",
-    imageUrl: artwork6,
+    imageUrl: "https://res.cloudinary.com/dq6x48o03/image/upload/v1763031140/IMG_0077_qnng59.webp",
     category: "Abstract",
     price: "$2,100",
     sold: "false",
@@ -98,7 +78,7 @@ export const artworksData = [
     medium: "Oil on Canvas",
     dimensions: '48" × 24"',
     description: "The city transforms as day becomes night. Impressionistic brushwork captures the fleeting magic of the golden hour.",
-    imageUrl: artwork7,
+    imageUrl: "https://res.cloudinary.com/dq6x48o03/image/upload/a_-90/v1763031082/IMG_0083_d8ng42.webp",
     category: "Cityscape",
     price: "$2,900",
     sold: "false",
@@ -110,7 +90,7 @@ export const artworksData = [
     medium: "Oil on Canvas",
     dimensions: '20" × 30"',
     description: "Delicate florals rendered in soft, romantic tones. A celebration of natural beauty and the passage of seasons.",
-    imageUrl: artwork8,
+    imageUrl: "https://res.cloudinary.com/dq6x48o03/image/upload/v1763031080/IMG_0091_ovhfjz.webp",
     category: "Still Life",
     price: "$1,900",
     sold: "false",
@@ -122,7 +102,7 @@ export const artworksData = [
     medium: "Ink and Gold Leaf on Paper",
     dimensions: '32" × 24"',
     description: "Bold, calligraphic marks dance across the surface. The interplay of black ink and precious metal creates visual drama.",
-    imageUrl: artwork9,
+    imageUrl: "https://res.cloudinary.com/dq6x48o03/image/upload/a_90/v1763031079/IMG_0094_qul10a.webp",
     category: "Abstract",
     price: "$2,800",
     sold: "true",
@@ -134,7 +114,7 @@ export const artworksData = [
     medium: "Oil on Canvas",
     dimensions: '36" × 48"',
     description: "Sunlight filters through ancient trees, creating patterns of light and shadow. An immersive experience of nature's cathedral.",
-    imageUrl: artwork10,
+    imageUrl: "https://res.cloudinary.com/dq6x48o03/image/upload/v1763031141/IMG_0072_zdzfhs.webp",
     category: "Landscape",
     price: "$3,400",
     sold: "false",
@@ -146,7 +126,7 @@ export const artworksData = [
     medium: "Acrylic on Canvas",
     dimensions: '40" × 30"',
     description: "Capturing the ephemeral grace of dance through expressive brushwork and dynamic composition.",
-    imageUrl: artwork11,
+    imageUrl: "https://res.cloudinary.com/dq6x48o03/image/upload/a_-90/v1763031042/IMG_0098_ymjmvm.webp",
     category: "Figurative",
     price: "$3,100",
     sold: "false",
@@ -158,7 +138,7 @@ export const artworksData = [
     medium: "Acrylic on Canvas",
     dimensions: '30" × 40"',
     description: "Minimalist color field painting exploring the subtle relationships between hue, value, and texture.",
-    imageUrl: artwork12,
+    imageUrl: "https://res.cloudinary.com/dq6x48o03/image/upload/v1763031040/IMG_0109_q7s0wl.webp",
     category: "Abstract",
     price: "$2,500",
     sold: "false",
@@ -170,7 +150,7 @@ export const artworksData = [
     medium: "Oil on Canvas",
     dimensions: '36" × 48"',
     description: "Classical architecture rendered with precision and reverence. Light and shadow reveal the enduring beauty of form.",
-    imageUrl: artwork13,
+    imageUrl: "https://res.cloudinary.com/dq6x48o03/image/upload/a_-90/v1763031040/IMG_0104_os12jy.webp",
     category: "Architecture",
     price: "$3,300",
     sold: "false",
@@ -182,7 +162,7 @@ export const artworksData = [
     medium: "Oil on Canvas",
     dimensions: '48" × 20"',
     description: "Dramatic cliffs meet the endless ocean under a painted sky. A romantic vision of nature's grandeur.",
-    imageUrl: artwork14,
+    imageUrl: "https://res.cloudinary.com/dq6x48o03/image/upload/a_-90/v1763031038/IMG_0100_aiepe3.webp",
     category: "Landscape",
     price: "$3,600",
     sold: "false",
@@ -194,7 +174,7 @@ export const artworksData = [
     medium: "Mixed Media with Metallic Accents",
     dimensions: '30" × 30"',
     description: "Layered textures and metallic elements create depth and luminosity. An exploration of material and surface.",
-    imageUrl: artwork15,
+    imageUrl: "https://res.cloudinary.com/dq6x48o03/image/upload/v1763031038/IMG_0113_lrpa37.webp",
     category: "Abstract",
     price: "$2,700",
     sold: "false",
@@ -206,7 +186,7 @@ export const artworksData = [
     medium: "Oil on Canvas",
     dimensions: '28" × 36"',
     description: "A classical arrangement of vintage ceramics and dried botanicals. Quiet beauty found in everyday objects.",
-    imageUrl: artwork16,
+    imageUrl: "https://res.cloudinary.com/dq6x48o03/image/upload/v1763031041/IMG_0102_qw7i8n.webp",
     category: "Still Life",
     price: "$2,200",
     sold: "false",
@@ -218,7 +198,7 @@ export const artworksData = [
     medium: "Acrylic on Canvas",
     dimensions: '36" × 48"',
     description: "Explosive color and dynamic movement. This piece embodies pure creative energy and spontaneous expression.",
-    imageUrl: artwork17,
+    imageUrl: "https://res.cloudinary.com/dq6x48o03/image/upload/a_-90/v1763031038/IMG_0111_bukgaq.webp",
     category: "Abstract",
     price: "$3,000",
     sold: "false",
@@ -230,7 +210,7 @@ export const artworksData = [
     medium: "Oil on Canvas",
     dimensions: '32" × 24"',
     description: "Minimalist composition inspired by Japanese rock gardens. A meditation on simplicity, balance, and tranquility.",
-    imageUrl: artwork18,
+    imageUrl: "https://res.cloudinary.com/dq6x48o03/image/upload/a_-90/v1763031140/IMG_0075_qpbuhe.webp",
     category: "Landscape",
     price: "$2,300",
     sold: "false",

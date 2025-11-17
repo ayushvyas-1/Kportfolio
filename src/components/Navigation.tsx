@@ -3,6 +3,7 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { ThemeToggle } from "./ThemeToggle";
 import { Button } from "@/components/ui/button";
+import { motion, AnimatePresence } from "framer-motion";
 
 export function Navigation() {
   const [location] = useLocation();
@@ -15,26 +16,25 @@ export function Navigation() {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 bg-background/90 backdrop-blur-lg border-b border-border/50">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-6 md:py-8">
-        <div className="flex items-center justify-between">
+    <>
+      <nav className="sticky top-0 z-40 bg-background/60 backdrop-blur-md border-b border-border/40">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 py-5 flex items-center justify-between">
+
+          {/* Logo */}
           <Link href="/" data-testid="link-home">
-            <h1 className="font-display text-2xl md:text-3xl font-medium tracking-wider cursor-pointer hover-elevate px-3 py-2 rounded-md">
+            <h1 className="font-display text-xl md:text-2xl tracking-widest cursor-pointer">
               KASHYAP VYAS
             </h1>
           </Link>
 
-          <div className="hidden md:flex items-center gap-12">
+          {/* Desktop navigation */}
+          <div className="hidden md:flex items-center gap-10">
             {navItems.map((item) => (
-              <Link
-                key={item.path}
-                href={item.path}
-                data-testid={`link-nav-${item.label.toLowerCase()}`}
-              >
+              <Link key={item.path} href={item.path}>
                 <span
-                  className={`text-xs uppercase tracking-[0.15em] cursor-pointer transition-colors font-light ${
+                  className={`text-xs uppercase tracking-[0.25em] transition-colors cursor-pointer ${
                     location === item.path
-                      ? "text-foreground font-normal"
+                      ? "text-foreground"
                       : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
@@ -42,49 +42,73 @@ export function Navigation() {
                 </span>
               </Link>
             ))}
+
             <ThemeToggle />
           </div>
 
+          {/* Mobile burger */}
           <div className="md:hidden flex items-center gap-2">
             <ThemeToggle />
             <Button
               variant="ghost"
               size="icon"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              data-testid="button-mobile-menu"
+              onClick={() => setMobileMenuOpen(true)}
             >
-              {mobileMenuOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
+              <Menu className="h-6 w-6" />
             </Button>
           </div>
         </div>
+      </nav>
 
+      <AnimatePresence>
         {mobileMenuOpen && (
-          <div className="md:hidden mt-8 pb-6 space-y-6">
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                href={item.path}
+          <motion.div
+            className="fixed inset-0 z-100 bg-background/85 backdrop-blur-2xl flex flex-col px-8 py-12"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            {/* Top bar inside menu */}
+            <div className="flex items-center justify-between mb-16">
+              <h1 className="font-display text-xl tracking-widest">
+                KASHYAP VYAS
+              </h1>
+
+              <Button
+                variant="ghost"
+                size="icon"
                 onClick={() => setMobileMenuOpen(false)}
-                data-testid={`link-mobile-${item.label.toLowerCase()}`}
+                className="text-foreground hover:bg-foreground/10"
               >
-                <div
-                  className={`text-lg uppercase tracking-[0.15em] cursor-pointer transition-colors py-2 font-light ${
-                    location === item.path
-                      ? "text-foreground font-normal"
-                      : "text-muted-foreground"
-                  }`}
+                <X className="h-7 w-7" />
+              </Button>
+            </div>
+
+            {/* Centered nav links */}
+            <nav className="flex flex-col gap-10 mt-10">
+              {navItems.map((item) => (
+                <Link
+                  key={item.path}
+                  href={item.path}
+                  onClick={() => setMobileMenuOpen(false)}
                 >
-                  {item.label}
-                </div>
-              </Link>
-            ))}
-          </div>
+                  <motion.span
+                    className={`text-2xl uppercase tracking-[0.25em] block ${
+                      location === item.path
+                        ? "text-foreground font-semibold"
+                        : "text-muted-foreground hover:text-foreground"
+                    }`}
+                    whileHover={{ x: 8 }}
+                    transition={{ type: "spring", stiffness: 200 }}
+                  >
+                    {item.label}
+                  </motion.span>
+                </Link>
+              ))}
+            </nav>
+          </motion.div>
         )}
-      </div>
-    </nav>
+      </AnimatePresence>
+    </>
   );
 }

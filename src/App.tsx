@@ -9,6 +9,7 @@ import NotFound from "@/pages/not-found";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { TooltipProvider } from "./components/ui/tooltip";
 import { Navigation } from "./components/Navigation";
+import { Toaster } from "sonner";
 
 
 
@@ -30,6 +31,7 @@ function App() {
           <div className="min-h-screen bg-background">
             <Navigation />
             <Router />
+            <Toaster/>
           </div>
         </TooltipProvider>
       </ThemeProvider>
