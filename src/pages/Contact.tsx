@@ -1,10 +1,11 @@
-import { Mail, Instagram, MessageSquare } from "lucide-react";
+import { Mail, Instagram, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { useState } from "react";
+import { PageTransition } from "@/components/PageTransition";
 
 export default function Contact() {
   const [loading, setLoading] = useState(false);
@@ -12,7 +13,7 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    
+
     const form = e.currentTarget; // Store reference before async
 
     const loadingToast = toast.loading("Sending your message…");
@@ -52,48 +53,56 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <PageTransition>
       <div className="max-w-5xl mx-auto px-6 md:px-12 lg:px-16 py-24 md:py-32">
 
-        <div className="text-center mb-16">
-          <h1 className="font-display text-4xl md:text-5xl font-medium tracking-wide mb-6">
-            GET IN TOUCH
+        <div className="text-center mb-20">
+          <h1 className="font-display text-5xl md:text-6xl font-normal tracking-tight mb-6">
+            Get in Touch
           </h1>
-          <p className="text-muted-foreground text-lg md:text-xl font-light max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-xl font-light max-w-2xl mx-auto">
             Interested in a commission or collaboration? I'd love to hear from you.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-16">
-          
+        <div className="grid md:grid-cols-2 gap-16 lg:gap-24">
+
           {/* Contact Links */}
           <div className="space-y-12">
-            <h2 className="font-display text-2xl md:text-3xl font-medium tracking-wide mb-8">
-              CONTACT
-            </h2>
+            <div>
+              <h2 className="font-display text-2xl font-medium mb-8">
+                Contact Information
+              </h2>
 
-            <div className="space-y-6">
-              <a
-                href="mailto:kashyapvyas36@gmail.com"
-                className="flex items-center gap-4 text-muted-foreground hover:text-foreground transition"
-              >
-                <div className="p-3 rounded-md border border-border">
-                  <Mail className="h-5 w-5" />
-                </div>
-                <span className="font-light">kashyapvyas36@gmail.com</span>
-              </a>
+              <div className="space-y-8">
+                <a
+                  href="mailto:kashyapvyas36@gmail.com"
+                  className="group flex items-center gap-6 text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <div className="p-4 bg-muted rounded-none group-hover:bg-foreground group-hover:text-background transition-colors duration-300">
+                    <Mail className="h-6 w-6" />
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-xs uppercase tracking-widest mb-1">Email</span>
+                    <span className="font-light text-lg">kashyapvyas36@gmail.com</span>
+                  </div>
+                </a>
 
-              <a
-                href="https://instagram.com/kashyap_vyas_art/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 text-muted-foreground hover:text-foreground transition"
-              >
-                <div className="p-3 rounded-md border border-border">
-                  <Instagram className="h-5 w-5" />
-                </div>
-                <span className="font-light">@kashyap_vyas_art</span>
-              </a>
+                <a
+                  href="https://instagram.com/kashyap_vyas_art/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-6 text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <div className="p-4 bg-muted rounded-none group-hover:bg-foreground group-hover:text-background transition-colors duration-300">
+                    <Instagram className="h-6 w-6" />
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-xs uppercase tracking-widest mb-1">Instagram</span>
+                    <span className="font-light text-lg">@kashyap_vyas_art</span>
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
 
@@ -101,37 +110,54 @@ export default function Contact() {
           <div>
             <form onSubmit={handleSubmit} className="space-y-8">
 
-              <div>
-                <Label className="text-sm uppercase tracking-widest mb-3 block font-light">
+              <div className="group">
+                <Label className="text-xs uppercase tracking-widest mb-2 block font-medium text-muted-foreground group-focus-within:text-foreground transition-colors">
                   Name
                 </Label>
-                <Input name="name" required className="font-light" />
+                <Input
+                  name="name"
+                  required
+                  className="font-light border-0 border-b border-border rounded-none px-0 focus-visible:ring-0 focus-visible:border-foreground transition-colors bg-transparent"
+                  placeholder="Your Name"
+                />
               </div>
 
-              <div>
-                <Label className="text-sm uppercase tracking-widest mb-3 block font-light">
+              <div className="group">
+                <Label className="text-xs uppercase tracking-widest mb-2 block font-medium text-muted-foreground group-focus-within:text-foreground transition-colors">
                   Email
                 </Label>
-                <Input name="email" type="email" required className="font-light" />
+                <Input
+                  name="email"
+                  type="email"
+                  required
+                  className="font-light border-0 border-b border-border rounded-none px-0 focus-visible:ring-0 focus-visible:border-foreground transition-colors bg-transparent"
+                  placeholder="your@email.com"
+                />
               </div>
 
-              <div>
-                <Label className="text-sm uppercase tracking-widest mb-3 block font-light">
+              <div className="group">
+                <Label className="text-xs uppercase tracking-widest mb-2 block font-medium text-muted-foreground group-focus-within:text-foreground transition-colors">
                   Message
                 </Label>
-                <Textarea name="message" rows={6} required className="font-light" />
+                <Textarea
+                  name="message"
+                  rows={4}
+                  required
+                  className="font-light border-0 border-b border-border rounded-none px-0 focus-visible:ring-0 focus-visible:border-foreground transition-colors bg-transparent resize-none"
+                  placeholder="How can I help you?"
+                />
               </div>
 
               <Button
                 type="submit"
                 size="lg"
-                className="w-full text-sm uppercase tracking-widest flex items-center gap-2"
+                className="w-full md:w-auto text-xs uppercase tracking-[0.2em] h-14 px-8 rounded-none bg-foreground text-background hover:bg-foreground/90 transition-colors"
                 disabled={loading}
               >
                 {loading ? "Sending…" : (
-                  <>
-                    <MessageSquare className="h-4 w-4" /> Send Message
-                  </>
+                  <span className="flex items-center gap-2">
+                    Send Message <ArrowRight className="h-4 w-4" />
+                  </span>
                 )}
               </Button>
             </form>
@@ -139,6 +165,6 @@ export default function Contact() {
 
         </div>
       </div>
-    </div>
+    </PageTransition>
   );
 }
