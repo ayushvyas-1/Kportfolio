@@ -28,8 +28,8 @@ export function Navigation() {
     <>
       <motion.nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${scrolled || mobileMenuOpen
-            ? "bg-background/80 backdrop-blur-md border-b border-border/40 py-4"
-            : "bg-transparent py-6"
+          ? "bg-background/80 backdrop-blur-md border-b border-border/40 py-4"
+          : "bg-transparent py-6"
           }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -37,33 +37,29 @@ export function Navigation() {
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/">
-            <a className="group relative z-50">
-              <h1 className="font-display text-2xl md:text-3xl tracking-widest font-medium text-foreground">
-                KASHYAP VYAS
-              </h1>
-              <span className="block h-0.5 w-0 bg-foreground transition-all duration-500 group-hover:w-full" />
-            </a>
+          <Link href="/" className="group relative z-50">
+            <h1 className="font-signature text-4xl md:text-5xl tracking-normal font-normal text-foreground">
+              Kashyap Vyas
+            </h1>
+            <span className="block h-0.5 w-0 bg-foreground transition-all duration-500 group-hover:w-full" />
           </Link>
 
           {/* Desktop navigation */}
           <div className="hidden md:flex items-center gap-12">
             {navItems.map((item) => (
-              <Link key={item.path} href={item.path}>
-                <a className="relative group py-2">
-                  <span
-                    className={`font-sans text-xs uppercase tracking-[0.2em] transition-colors duration-300 ${location === item.path
-                        ? "text-foreground font-medium"
-                        : "text-muted-foreground group-hover:text-foreground"
-                      }`}
-                  >
-                    {item.label}
-                  </span>
-                  <span
-                    className={`absolute bottom-0 left-0 h-[1px] bg-foreground transition-all duration-300 ease-out ${location === item.path ? "w-full" : "w-0 group-hover:w-full"
-                      }`}
-                  />
-                </a>
+              <Link key={item.path} href={item.path} className="relative group py-2">
+                <span
+                  className={`font-sans text-xs uppercase tracking-[0.2em] transition-colors duration-300 ${location === item.path
+                    ? "text-foreground font-medium"
+                    : "text-muted-foreground group-hover:text-foreground"
+                    }`}
+                >
+                  {item.label}
+                </span>
+                <span
+                  className={`absolute bottom-0 left-0 h-[1px] bg-foreground transition-all duration-300 ease-out ${location === item.path ? "w-full" : "w-0 group-hover:w-full"
+                    }`}
+                />
               </Link>
             ))}
 
@@ -108,20 +104,22 @@ export function Navigation() {
 
             <nav className="flex flex-col items-center gap-8">
               {navItems.map((item, i) => (
-                <Link key={item.path} href={item.path}>
-                  <a onClick={() => setMobileMenuOpen(false)}>
-                    <motion.span
-                      className={`font-display text-4xl md:text-5xl cursor-pointer transition-colors ${location === item.path
-                          ? "text-foreground"
-                          : "text-muted-foreground hover:text-foreground"
-                        }`}
-                      initial={{ opacity: 0, y: 40 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.1 + i * 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                    >
-                      {item.label}
-                    </motion.span>
-                  </a>
+                <Link
+                  key={item.path}
+                  href={item.path}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <motion.span
+                    className={`font-display text-4xl md:text-5xl cursor-pointer transition-colors ${location === item.path
+                      ? "text-foreground"
+                      : "text-muted-foreground hover:text-foreground"
+                      }`}
+                    initial={{ opacity: 0, y: 40 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1 + i * 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                  >
+                    {item.label}
+                  </motion.span>
                 </Link>
               ))}
             </nav>

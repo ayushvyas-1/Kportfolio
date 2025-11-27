@@ -72,30 +72,29 @@ export default function About() {
           <div className="md:col-span-7 space-y-8 text-lg md:text-xl leading-loose font-light text-foreground/80">
             {[
               <>
-                <span className="font-medium text-foreground">Kashyap Vyas</span> grew up in a
-                railway town in Gujarat, where his father worked as a railway guard.
-                He spent his childhood drawing engines using pieces of coal,
-                unknowingly laying the foundation of his artistic journey.
+                Born in 1962 in <span className="font-medium text-foreground">Wadhavan City</span>,
+                <span className="font-medium text-foreground"> Kashyap Vyas</span> began his artistic journey
+                in the railway town of Jetalsar. It was there, beside the tracks, that he spent his childhood
+                sketching engines with pieces of coal—a humble beginning that would shape a lifetime of creativity.
               </>,
               <>
-                He pursued a Bachelor’s Degree in Fine Arts from
-                <span className="font-medium text-foreground"> MS University, Vadodara</span>,
-                refining his technique and visual language.
+                He refined his craft at the <span className="font-medium text-foreground">C.U. Shah Art Teacher Training College</span> and
+                later earned his Diploma in Applied Art from the prestigious
+                <span className="font-medium text-foreground"> MS University, Vadodara</span> in 1985.
+                His early career saw success in advertising, where he designed the iconic "Barmasi Flower" logo for
+                <span className="font-medium text-foreground"> Kayam Churna</span> (Sheth Bros) in 1985.
               </>,
               <>
-                After working in advertising agencies in Bombay, he entered the
-                museum field — first at <span className="font-medium text-foreground">
-                  Bhavnagar Museum
-                </span>, then at
-                <span className="font-medium text-foreground"> Junagadh Museum</span>,
-                retiring in 2021 as <span className="font-medium text-foreground">
-                  Curator In-Charge
-                </span>.
+                In March 1985, he joined the <span className="font-medium text-foreground">Department of Museums, Gujarat State</span>.
+                Over a distinguished 35-year career, he served as Curator at the Junagadh Museum, Darbar Hall Museum, and
+                Prabhaspatan Archaeology Museum. He further specialized in Museology at the
+                <span className="font-medium text-foreground"> National Museum, New Delhi</span> in 1991,
+                earning an A+ grade for his work on modern display techniques.
               </>,
               <>
-                A passionate lifelong learner, his knowledge spans art, history,
-                mythology, and culture — all while continuing to paint with the
-                same love he had as a child.
+                Beyond his official duties, he was a volunteer artist for the <span className="font-medium text-foreground">Bhavnagar Wildlife Conservation Society</span>,
+                creating illustrations of flora and fauna. He retired in October 2020, leaving behind a legacy of
+                modernized museum displays, conservation workshops, and a deep commitment to preserving heritage.
               </>
             ].map((paragraph, i) => (
               <motion.p
@@ -122,23 +121,91 @@ export default function About() {
               <ul className="space-y-4 text-muted-foreground font-light text-base">
                 <li className="flex items-start gap-3">
                   <span className="block w-1.5 h-1.5 mt-2 rounded-full bg-foreground/20" />
-                  Artist for 30+ years
+                  Born 1962, Wadhavan City
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="block w-1.5 h-1.5 mt-2 rounded-full bg-foreground/20" />
-                  BFA from MS University, Vadodara
+                  Diploma in Applied Art (MSU Vadodara)
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="block w-1.5 h-1.5 mt-2 rounded-full bg-foreground/20" />
-                  Retired Curator In-Charge, Junagadh Museum
+                  Museology Expert (National Museum)
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="block w-1.5 h-1.5 mt-2 rounded-full bg-foreground/20" />
-                  Passionate about history & heritage
+                  Retired Curator (Gujarat State Museums)
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="block w-1.5 h-1.5 mt-2 rounded-full bg-foreground/20" />
+                  Designed 'Kayam Churna' Logo (1985)
                 </li>
               </ul>
             </motion.div>
           </div>
+        </div>
+
+        {/* ---------------- EDUCATION & CAREER ---------------- */}
+        <div className="grid md:grid-cols-2 gap-20 mb-36">
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.55 }}
+          >
+            <h2 className="font-display text-[2rem] md:text-[2.75rem] font-semibold tracking-tight leading-tight mb-10">
+              Education
+            </h2>
+
+            <div className="space-y-10 font-light text-[1.05rem] md:text-[1.18rem] leading-[1.85]">
+              <div>
+                <div className="text-lg font-medium">Museology Training (Grade A+)</div>
+                <div className="text-muted-foreground">National Museum, New Delhi (1991)</div>
+                <div className="text-sm text-muted-foreground">
+                  Specialized in Modern Display Techniques
+                </div>
+              </div>
+              <div>
+                <div className="text-lg font-medium">Diploma in Applied Art</div>
+                <div className="text-muted-foreground">MS University, Vadodara (1985)</div>
+              </div>
+              <div>
+                <div className="text-lg font-medium">Art Teacher Training</div>
+                <div className="text-muted-foreground">C.U. Shah College, Surendranagar (1978)</div>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.55, delay: 0.2 }}
+          >
+            <h2 className="font-display text-[2rem] md:text-[2.75rem] font-semibold tracking-tight leading-tight mb-10">
+              Career Highlights
+            </h2>
+
+            <div className="space-y-10 font-light text-[1.05rem] md:text-[1.18rem] leading-[1.85]">
+              <div>
+                <div className="text-lg font-medium">Curator In-Charge</div>
+                <div className="text-muted-foreground">Junagadh Museum & Darbar Hall Museum</div>
+                <div className="text-sm text-muted-foreground">
+                  1985 — 2020
+                </div>
+              </div>
+              <div>
+                <div className="text-lg font-medium">Commercial Designer</div>
+                <div className="text-muted-foreground">Apex Advertising, Rajkot</div>
+                <div className="text-sm text-muted-foreground">
+                  Creator of the "Barmasi Flower" logo for Kayam Churna
+                </div>
+              </div>
+              <div>
+                <div className="text-lg font-medium">Wildlife Artist (Volunteer)</div>
+                <div className="text-muted-foreground">Bhavnagar Wildlife Conservation Society</div>
+              </div>
+            </div>
+          </motion.div>
         </div>
 
         {/* ---------------- EXHIBITION CAROUSEL ---------------- */}

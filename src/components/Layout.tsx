@@ -16,6 +16,10 @@ export function Layout({ children }: LayoutProps) {
             <main className="relative min-h-screen">
                 {children}
             </main>
+
+            <footer className="py-6 text-center text-xs text-muted-foreground/30 font-light tracking-widest uppercase hover:text-muted-foreground transition-colors duration-500">
+                made by his loving son Ayush
+            </footer>
         </div>
     );
 }

@@ -1,4 +1,5 @@
 import { Switch, Route, useLocation } from "wouter";
+import { useEffect } from "react";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "@/lib/queryClient";
 import Home from "@/pages/Home";
@@ -27,6 +28,18 @@ function Router() {
 }
 
 function App() {
+  useEffect(() => {
+    console.log(
+      "%c Designed & Developed by Ayush Vyas %c \nhttps://ayushvyas.com",
+      "background: #000000; color: #ffffff; padding: 10px 20px; border-radius: 4px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 1px;",
+      "color: #888888; font-family: 'Inter', sans-serif; font-size: 12px; padding-top: 10px;"
+    );
+    console.log(
+      "%c I made this site! If you want to make one too, contact me at ayushkv360@gmail.com",
+      "color: #ddff1dff; font-family: 'Inter', sans-serif; font-size: 12px; font-style: italic;"
+    );
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>

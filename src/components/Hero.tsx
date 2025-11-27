@@ -39,7 +39,7 @@ export function Hero({ imageUrl, title, subtitle, onScrollClick }: HeroProps) {
 
             {/* Content */}
             <div className="relative z-20 h-full flex flex-col items-center justify-center text-center px-6">
-                <div className="overflow-hidden mb-4">
+                <div className="overflow-hidden mb-1 pb-4">
                     <motion.h1
                         className="font-display text-5xl md:text-7xl lg:text-8xl text-white tracking-wider"
                         initial={{ y: 100, opacity: 0 }}
