@@ -112,8 +112,16 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground font-sans antialiased selection:bg-primary/10 selection:text-primary;
+    @apply bg-background text-foreground font-sans antialiased selection:bg-primary/20 selection:text-primary;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary/50;
   }
 
   h1,

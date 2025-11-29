@@ -12,11 +12,14 @@ import { Toaster } from "sonner";
 import { Layout } from "@/components/Layout";
 import { AnimatePresence } from "framer-motion";
 
+import { ScrollToTop } from "@/components/ScrollToTop";
+
 function Router() {
   const [location] = useLocation();
 
   return (
-    <AnimatePresence mode="wait">
+    <AnimatePresence>
+      <ScrollToTop />
       <Switch location={location} key={location}>
         <Route path="/" component={Home} />
         <Route path="/about" component={About} />
@@ -30,7 +33,7 @@ function Router() {
 function App() {
   useEffect(() => {
     console.log(
-      "%c Designed & Developed by Ayush Vyas %c \nhttps://ayushvyas.com",
+      "%c Designed & Developed by Ayush Vyas %c",
       "background: #000000; color: #ffffff; padding: 10px 20px; border-radius: 4px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 1px;",
       "color: #888888; font-family: 'Inter', sans-serif; font-size: 12px; padding-top: 10px;"
     );
