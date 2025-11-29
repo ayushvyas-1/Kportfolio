@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Pinyon+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Lato:wght@300;400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -32,10 +32,10 @@
   --color-ring: oklch(10% 0 0);
 
   /* Typography */
-  --font-sans: "Inter", system-ui, sans-serif;
+  --font-sans: "Lato", system-ui, sans-serif;
   --font-serif: "Cormorant Garamond", serif;
-  --font-display: "Playfair Display", serif;
-  --font-signature: "Pinyon Script", cursive;
+  --font-display: "Cinzel", serif;
+  --font-signature: "Cinzel", serif;
 
   /* Radius */
   --radius: 0rem;

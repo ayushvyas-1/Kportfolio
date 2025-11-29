@@ -24,6 +24,9 @@ export function Navigation() {
     { label: "Contact", path: "/contact" },
   ];
 
+  const isHome = location === "/";
+  const isTransparent = isHome && !scrolled && !mobileMenuOpen;
+
   return (
     <>
       <motion.nav
@@ -38,10 +41,12 @@ export function Navigation() {
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="group relative z-50">
-            <h1 className="font-signature text-4xl md:text-5xl tracking-normal font-normal text-foreground">
+            <h1 className={`font-display text-4xl md:text-5xl tracking-normal font-normal transition-colors duration-300 ${isTransparent ? "text-white" : "text-foreground"
+              }`}>
               Kashyap Vyas
             </h1>
-            <span className="block h-0.5 w-0 bg-foreground transition-all duration-500 group-hover:w-full" />
+            <span className={`block h-0.5 w-0 transition-all duration-500 group-hover:w-full ${isTransparent ? "bg-white" : "bg-foreground"
+              }`} />
           </Link>
 
           {/* Desktop navigation */}
@@ -50,32 +55,34 @@ export function Navigation() {
               <Link key={item.path} href={item.path} className="relative group py-2">
                 <span
                   className={`font-sans text-xs uppercase tracking-[0.2em] transition-colors duration-300 ${location === item.path
-                    ? "text-foreground font-medium"
-                    : "text-muted-foreground group-hover:text-foreground"
+                    ? (isTransparent ? "text-white font-medium" : "text-foreground font-medium")
+                    : (isTransparent ? "text-white/70 group-hover:text-white" : "text-muted-foreground group-hover:text-foreground")
                     }`}
                 >
                   {item.label}
                 </span>
                 <span
-                  className={`absolute bottom-0 left-0 h-[1px] bg-foreground transition-all duration-300 ease-out ${location === item.path ? "w-full" : "w-0 group-hover:w-full"
-                    }`}
+                  className={`absolute bottom-0 left-0 h-[1px] transition-all duration-300 ease-out ${location === item.path ? "w-full" : "w-0 group-hover:w-full"
+                    } ${isTransparent ? "bg-white" : "bg-foreground"}`}
                 />
               </Link>
             ))}
 
-            <div className="pl-4 border-l border-border/50">
-              <ThemeToggle />
+            <div className={`pl-4 border-l ${isTransparent ? "border-white/30" : "border-border/50"}`}>
+              <div className={isTransparent ? "text-white" : ""}>
+                <ThemeToggle />
+              </div>
             </div>
           </div>
 
           {/* Mobile burger */}
-          <div className="md:hidden flex items-center gap-4">
+          <div className={`md:hidden flex items-center gap-4 ${isTransparent ? "text-white" : ""}`}>
             <ThemeToggle />
             <Button
               variant="ghost"
               size="icon"
               onClick={() => setMobileMenuOpen(true)}
-              className="hover:bg-transparent"
+              className={`hover:bg-transparent ${isTransparent ? "text-white hover:text-white/80" : ""}`}
             >
               <Menu className="h-6 w-6" />
             </Button>

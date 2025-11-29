@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import { MasonryGrid } from "@/components/MasonryGrid";
 import { artworksData } from "@/lib/artworks-data";
 import { PhotoProvider } from "react-photo-view";
@@ -6,15 +5,6 @@ import { Hero } from "@/components/Hero";
 import { PageTransition } from "@/components/PageTransition";
 
 export default function Home() {
-  // Pick featured artwork only once
-  const featuredArtwork = useMemo(() => {
-    // Prefer landscape for hero if possible, or just random
-    const landscapes = artworksData.filter(a => a.category === "Landscape" || a.category === "Abstract");
-    const pool = landscapes.length > 0 ? landscapes : artworksData;
-    const index = Math.floor(Math.random() * pool.length);
-    return pool[index];
-  }, []);
-
   const scrollToGallery = () => {
     document.getElementById("gallery")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -22,7 +12,7 @@ export default function Home() {
   return (
     <PageTransition>
       <Hero
-        imageUrl={featuredArtwork.imageUrl}
+        imageUrl="/BG.png"
         title="Kashyap Vyas"
         subtitle="Contemporary Fine Artist"
         onScrollClick={scrollToGallery}
